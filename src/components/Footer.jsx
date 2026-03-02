@@ -165,14 +165,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer id="contact" className="bg-[#FCFAF5] border-t border-gray-100 pt-20 pb-10 font-serif">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer id="contact" className="bg-[#FCFAF5] border-t border-gray-100 pt-10 lg:pt-20 lg:pb-10 pb-5 font-serif">
+      <div className="max-w-7xl mx-auto px-4">
         
         {/* Main Footer */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-16 mb-5 lg:mb-20">
           
           {/* Brand Column */}
-          <div className="lg:col-span-4 flex flex-col space-y-8">
+          <div className="lg:col-span-2 flex flex-col space-y-8">
             <div className="flex items-center gap-3">
               <img 
                 src={logo} 
@@ -200,7 +200,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <h4 className="text-[#0A2540] text-xs uppercase tracking-[0.3em] font-bold mb-8">Navigation</h4>
             <ul className="space-y-4 font-sans text-sm text-gray-500">
               {[
@@ -222,7 +222,7 @@ const Footer = () => {
           </div>
 
           {/* Trust & Quality */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-1">
             <h4 className="text-[#0A2540] text-xs uppercase tracking-[0.3em] font-bold mb-8">Trust & Excellence</h4>
             <ul className="space-y-4 font-sans text-sm text-gray-500">
               {[
@@ -244,7 +244,7 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div className="lg:col-span-3 flex flex-col">
+          <div className="lg:col-span-2 flex flex-col">
             <h4 className="text-[#0A2540] text-xs uppercase tracking-[0.3em] font-bold mb-8">Reach Us</h4>
             <div className="space-y-6 font-sans text-sm text-gray-500">
               <div className="flex items-start gap-4">
@@ -264,7 +264,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-10 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="lg:pt-10 pt-5 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
   
   <p className="text-[10px] uppercase tracking-widest text-gray-400 font-sans">
     © {currentYear} TMR AGRO & MARINE — All Rights Reserved 

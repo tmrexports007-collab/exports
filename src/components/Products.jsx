@@ -180,7 +180,7 @@ const Products = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {riceVarieties.map((rice, index) => (
             <motion.div
               key={rice.id}
@@ -188,10 +188,10 @@ const Products = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: index * 0.1 }}
-              className="flex flex-col w-full sm:flex-row gap-8 items-center group cursor-pointer"
+              className="flex flex-col  sm:flex-row gap-8 items-center group cursor-pointer"
             >
               
-               <div className="w-full flex-1 sm:w-48 h-64 overflow-hidden rounded-tr-[50px] rounded-bl-[50px] transition-all duration-700">
+               <div className="w-full sm:w-48 h-64 overflow-hidden rounded-tr-[50px] rounded-bl-[50px] transition-all duration-700">
                 <img 
                   src={rice.image} 
                   alt={rice.name} 

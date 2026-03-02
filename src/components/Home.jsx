@@ -75,7 +75,7 @@ staggerChildren: 0.2,
 
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 lg:px-8 w-full">
 
 
 

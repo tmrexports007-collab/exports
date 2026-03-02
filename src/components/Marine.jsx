@@ -78,7 +78,7 @@ const Marine = () => {
 
       {/* --- MARINE GALLERY --- */}
       <section className="max-w-7xl mx-auto py-10 lg:py-20 px-4 overflow-hidden">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-blue-200 pb-8">
+        <div className="flex flex-col lg:flex-row justify-between items-end mb-16 border-b border-blue-200 pb-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -99,7 +99,7 @@ const Marine = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {marineProducts.map((item, index) => (
             <motion.div
               key={item.id}

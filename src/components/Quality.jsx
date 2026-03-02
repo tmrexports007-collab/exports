@@ -34,12 +34,12 @@ const Quality = () => {
     <div id='quality' className="font-serif">
       
       {/* --- NEW MINIMALIST HEADER SECTION (WHITE) --- */}
-      <section className="bg-white py-10 lg:py-20 px-4 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-16 items-start">
+      <section className="bg-white py-10 lg:py-20  overflow-hidden">
+        <div className="max-w-7xl px-4 mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-16 items-start">
             
             {/* Left: Big Statement */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-1">
               <motion.span 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -56,13 +56,13 @@ const Quality = () => {
                 transition={{ duration: 1.5, delay: 0.2 }}
                 className="text-2xl md:text-5xl font-light italic text-[#0A2540] leading-[1.1]"
               >
-                Purity Is Our <br className='hidden md:block' /> 
-                <span className="text-[#C5A059]">Only</span> Metric.
+                Purity Is Our 
+                <span className="text-[#C5A059]"> Only </span> Metric.
               </motion.h2>
             </div>
 
             {/* Right: Detailed text & Image */}
-            <div className="lg:col-span-5 pt-4">
+            <div className="lg:col-span-1 pt-4">
               <div className="border-l border-gray-100 lg:pl-8 mb-12">
                 <p className="text-gray-500 font-sans text-sm lg:leading-loose uppercase tracking-widest mb-8">
                   Beyond the harvest lies a commitment to perfection. We don't just export rice; we export a legacy of uncompromising quality control.
@@ -103,22 +103,22 @@ const Quality = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <Award className="text-[#C5A059] w-12 h-12 mb-8" />
-              <h2 className="text-4xl md:text-5xl font-light italic mb-8 leading-tight">
-                Globally Compliant. <br />Locally Sourced.
+              <h2 className="text-2xl md:text-5xl font-light italic mb-8 leading-tight">
+                Globally Compliant. <br  className='hidden lg:block'/>Locally Sourced.
               </h2>
-              <p className="text-gray-400 font-sans text-sm leading-relaxed max-w-md mb-12">
+              <p className="text-gray-400 font-sans text-sm leading-relaxed lg:max-w-md mb-12">
                 We bridge the gap between Indian heritage and international safety standards. Every bag is accompanied by comprehensive documentation for seamless global entry.
               </p>
               
              <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-6 lg:pt-12">
   {certificates.map((cert, i) => (
-    <div key={i} className="flex flex-col items-start gap-3">
+    <div key={i} className="flex flex-col items-start items-start gap-3">
       
       {/* Logo */}
       <img
         src={cert.logo}
         alt={cert.name}
-        className="h-15 w-15  object-cover"
+        className="h-15 w-15  object-contain "
       />
 
       {/* Text */}
@@ -136,7 +136,7 @@ const Quality = () => {
 </div>
             </div>
 
-            <div className="relative">
+            <div className="relative ">
               <div className="border border-[#C5A059]/30 p-4">
                 <img 
                   src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=1000" 
@@ -144,8 +144,8 @@ const Quality = () => {
                   className="w-full grayscale brightness-75 border border-[#C5A059]/20"
                 />
               </div>
-              <div className="absolute -bottom-10 -left-10 bg-[#C5A059] p-10 hidden md:block shadow-2xl">
-                 <p className="text-[#0A2540] text-xs font-bold uppercase tracking-[0.3em] leading-relaxed">
+              <div className="absolute lg:-bottom-10 -bottom-5 lg:-left-10 -left-3 bg-[#C5A059] rounded-md p-3 md:p-5 lg:p-10  md:block shadow-2xl">
+                 <p className="text-[#0A2540]  text-xs md:font-bold lg:uppercase lg:tracking-[0.3em] lg:leading-relaxed">
                    24-Point <br /> Quality <br /> Checks
                  </p>
               </div>

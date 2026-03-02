@@ -42,7 +42,7 @@ const WhyChooseUs = () => {
     <div id='why-choose-us' className="bg-white py-10 lg:py-20 font-serif text-[#1A1A1A] overflow-hidden">
       
       {/* Header */}
-      <section className="max-w-7xl mx-auto px-6 mb-20">
+      <section className="max-w-7xl mx-auto px-4 mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
