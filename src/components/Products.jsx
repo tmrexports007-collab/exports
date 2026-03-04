@@ -73,7 +73,7 @@ const Products = () => {
     },
     {
   id: 5,
-  name: "IR64 Parboiled Rice (100% Broken rice)",
+  name: "IR64 Parboiled Rice (5% Broken rice)",
   desc: "Widely exported parboiled rice known for its uniform grains, long shelf life, and excellent cooking stability, ideal for bulk supply and global markets.",
   image: ir64,
 },
@@ -89,7 +89,7 @@ const Products = () => {
     { label: "Years of Legacy", val: "112", suffix: "+" },
     { label: "Global Nations", val: "19", suffix: "+" },
     { label: "Quality Awards", val: "99", suffix: "+" },
-    { label: "Major Markets", val: "Asia & Africa", isText: true },
+    { label: "Major Markets", val: "ASIA , AFRICA , UAE , UK , EU & USA", isText: true },
   ];
 
   return (
@@ -154,19 +154,28 @@ const Products = () => {
 
       {/* --- MINIMALIST STATS --- */}
       <section className="bg-white py-10 lg:py-16 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 items-end gap-12">
-          {stats.map((stat, i) => (
-            <div key={i} className="text-center group">
-              <h4 className="text-[#C5A059] text-3xl font-light mb-1">
-                {stat.isText ? stat.val : <><Counter value={stat.val} />{stat.suffix}</>}
-              </h4>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400 group-hover:text-gray-600 transition-colors">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+  <div className="max-w-7xl px-4 mx-auto  grid grid-cols-1 md:grid-cols-5 items-end gap-12">
+    {stats.map((stat, i) => (
+      <div
+        key={i}
+        className={`text-center group ${i === stats.length - 1 ? "col-span-1 md:col-span-2" : ""}`}
+      >
+        <h4 className="text-[#C5A059] text-3xl font-light mb-1">
+          {stat.isText ? stat.val : (
+            <>
+              <Counter value={stat.val} />
+              {stat.suffix}
+            </>
+          )}
+        </h4>
+
+        <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400 group-hover:text-gray-600 transition-colors">
+          {stat.label}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* --- PRODUCT GALLERY --- */}
       <section className="max-w-7xl mx-auto py-10 lg:py-20 px-4">

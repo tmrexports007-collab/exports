@@ -116,7 +116,16 @@ staggerChildren: 0.2,
   variants={itemVariants}
   className="flex flex-wrap items-center justify-center lg:justify-start gap-3"
 >
-  <button className="bg-[#468e3d] hover:bg-white hover:text-[#004d2c] text-white px-6 py-3 rounded-full text-sm font-bold transition-all flex items-center gap-2 shadow-lg">
+  <button
+  onClick={() => {
+    const id = "contact";
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      window.location.hash = id; // updates route to #marine
+    }
+  }} className="bg-[#468e3d] hover:bg-white hover:text-[#004d2c] text-white px-6 py-3 rounded-full text-sm font-bold transition-all flex items-center gap-2 shadow-lg">
     Get Quote <FaChevronRight size={12} />
   </button>
   <a 
@@ -128,9 +137,20 @@ staggerChildren: 0.2,
               <FaWhatsapp size={18} /> WhatsApp
             </a>
 
-  <button className="bg-white/10 border border-white/30 text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-white hover:text-[#004d2c] transition-all flex items-center gap-2 backdrop-blur-sm">
-    <FaFileDownload size={14} /> Catalog
-  </button>
+  <button
+  onClick={() => {
+    const id = "product";
+    const section = document.getElementById(id);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      window.location.hash = id; // updates route to #marine
+    }
+  }}
+  className="bg-white/10 border border-white/30 text-white  px-6 py-3 rounded-full text-sm font-bold hover:bg-white hover:text-[#004d2c] transition-all flex items-center gap-2 backdrop-blur-sm"
+>
+  <FaFileDownload size={14} /> Catalog
+</button>
 </motion.div>
  </motion.div>
       </div>

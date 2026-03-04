@@ -21,43 +21,45 @@ const Nav = () => {
  
   // ✅ Scroll spy
  useEffect(() => {
-  const sections = navLinks
-    .map((link) => document.getElementById(link.href.replace("#", "")))
-    .filter(Boolean)
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + 100; // offset for navbar
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visibleSection = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+    navLinks.forEach((link) => {
+      const id = link.href.replace("#", "");
+      const section = document.getElementById(id);
 
-      if (visibleSection) {
-        setActiveSection(visibleSection.target.id)
+      if (section) {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          setActiveSection(id);
+        }
       }
-    },
-    {
-      root: null,
-      rootMargin: "-40% 0px -50% 0px", // 👈 center detection zone
-      threshold: [0.2, 0.4, 0.6, 0.8],
-    }
-  )
+    });
+  };
 
-  sections.forEach((section) => observer.observe(section))
+  window.addEventListener("scroll", handleScroll);
+
+  // run once on load
+  handleScroll();
 
   return () => {
-    sections.forEach((section) => observer.unobserve(section))
-  }
-}, [])
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
  
-  // ✅ Click scroll handler
   const handleClick = (id) => {
-    setActiveSection(id)
-    isManualScroll.current = true
- 
-    setTimeout(() => {
-      isManualScroll.current = false
-    }, 800)
-  }
+  setActiveSection(id);
+  isManualScroll.current = true;
+
+  setTimeout(() => {
+    isManualScroll.current = false;
+  }, 800);
+};
  
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-[1000] overflow-hidden">
