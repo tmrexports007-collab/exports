@@ -117,11 +117,11 @@ const Contact = () => {
                   </div>
 
                   <a
-                    href="mailto:info@tmragro.com?subject=Enquiry&body=Hello TMR Agro Team,"
+                    href="mailto:info@tmragromarineexports.com?subject=Enquiry&body=Hello TMR Agro Team,"
                     className="flex flex-col items-center gap-2"
                   >
                     <FaEnvelope className="text-[#468e3d] text-lg" />
-                    <p className="text-sm font-bold opacity-90">info@tmragro.com</p>
+                    <p className="text-sm font-bold opacity-90">info@tmragromarineexports.com</p>
                   </a>
                 </div>
 
