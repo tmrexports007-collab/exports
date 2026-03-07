@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
   const duplicatedAdvantages = [...advantages, ...advantages];
 
   return (
-    <div id='why-choose-us' className="bg-white py-10 lg:py-20 font-serif text-[#1A1A1A] overflow-hidden">
+    <div id='why-choose-us' className="bg-white py-10 lg:py-20 lg:scroll-mt-5 scroll-mt-15 font-serif text-[#1A1A1A] overflow-hidden">
       
       {/* Header */}
       <section className="max-w-7xl mx-auto px-4 mb-20">

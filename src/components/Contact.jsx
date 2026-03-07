@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa';
 import greenField from "../assets/about.jpg";
@@ -9,7 +9,7 @@ import axios from 'axios';
 const Contact = () => {
   const [status, setStatus] = useState("idle");
 
-    const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -24,33 +24,33 @@ const Contact = () => {
 
   // ✅ submit handler
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setStatus("loading");
+    e.preventDefault();
+    setStatus("loading");
 
-  try {
-    await axios.post(
-      "https://email-j44m.onrender.com/api/contact",
-      formData
-    );
+    try {
+      await axios.post(
+        "https://email-j44m.onrender.com/api/contact",
+        formData
+      );
 
-    setStatus("success");
+      setStatus("success");
 
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
 
-    // reset back to submit after 3s (optional)
-    setTimeout(() => setStatus("idle"), 3000);
+      // reset back to submit after 3s (optional)
+      setTimeout(() => setStatus("idle"), 3000);
 
-  } catch (err) {
-    setStatus("idle");
-    alert("Failed to send message ❌");
-  }
-};
+    } catch (err) {
+      setStatus("idle");
+      alert("Failed to send message ❌");
+    }
+  };
   return (
     <section id="contact" className=" py-10 scroll-mt-20 lg:scroll-mt-10 lg:py-20 container mx-auto overflow-hidden">
       <div className="w-full ">
@@ -58,30 +58,30 @@ const Contact = () => {
         <div className="flex flex-col lg:flex-row items-stretch min-h-150  overflow-hidden ">
 
           {/* Left Side*/}
-          <div className="w-full lg:w-1/2 mx-auto relative min-h-125 flex items-center justify-center">
+          <div className="w-full lg:w-1/2 mx-auto relative min-h-125   flex items-center justify-center">
 
-            <div className="absolute inset-0">
-              <img src={greenField} alt="Rice Field" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-[#004d2c]/90"></div>
+            <div className="absolute inset-0 rounded-xl">
+              <img src={greenField} alt="Rice Field" className="w-full h-full object-cover rounded-xl " />
+              <div className="absolute inset-0 bg-[#004d2c]/90 rounded-xl"></div>
             </div>
 
 
             <motion.div
-              
+
               className="relative z-10 flex flex-col items-center justify-center text-center p-4 lg:p-8"
             >
 
 
               <motion.div initial={{ opacity: 0, y: 20 }}
-              whileInView={{
-                opacity: 1,
-                y: [0, -20, 0]
-              }}
-              viewport={{ once: false }}
-              transition={{
-                opacity: { duration: 0.8 },
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }} className="absolute inset-0 z-0 pointer-events-none ">
+                whileInView={{
+                  opacity: 1,
+                  y: [0, -20, 0]
+                }}
+                viewport={{ once: false }}
+                transition={{
+                  opacity: { duration: 0.8 },
+                  y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                }} className="absolute inset-0 z-0 pointer-events-none ">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full relative">
                   <FaPhoneAlt
 
@@ -116,10 +116,13 @@ const Contact = () => {
                     <p className="text-sm lg:uppercase lg:tracking-[0.4em] text-white font-bold">Available 24/7</p>
                   </div>
 
-                  <div className="flex flex-col items-center gap-2">
+                  <a
+                    href="mailto:info@tmragro.com?subject=Enquiry&body=Hello TMR Agro Team,"
+                    className="flex flex-col items-center gap-2"
+                  >
                     <FaEnvelope className="text-[#468e3d] text-lg" />
-                    <p className="text-sm font-bold opacity-90">support@tmragro.com</p>
-                  </div>
+                    <p className="text-sm font-bold opacity-90">info@tmragro.com</p>
+                  </a>
                 </div>
 
                 <div className="flex gap-4 pt-6 justify-center">
@@ -172,8 +175,8 @@ const Contact = () => {
             <h3 className='font-bold text-[#004d2c] text-2xl lg:text-5xl mb-2'>Contact Us</h3>
             <p className="text-gray-400 mb-10 text-sm md:text-lg">Send us a message and we'll get back to you shortly.</p>
 
-             <form className="space-y-8" onSubmit={handleSubmit}>
-              
+            <form className="space-y-8" onSubmit={handleSubmit}>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="space-y-1 border-b border-gray-200 focus-within:border-[#468e3d] transition-colors pb-2">
                   <label className="text-base font-bold text-blue-950 lg:uppercase  lg:tracking-widest">First Name</label>
@@ -238,18 +241,18 @@ const Contact = () => {
                 />
               </div>
 
-             <button
-  type="submit"
-  disabled={status === "loading"}
-  className="mt-4 bg-[#004d2c] hover:bg-[#468e3d] text-white px-12 py-4 rounded-full font-bold transition-all shadow-lg flex items-center gap-3 w-fit disabled:opacity-70"
->
-  {status === "loading"
-    ? "Submitting..."
-    : status === "success"
-    ? "Submitted ✓"
-    : "Submit Now"}
-  <FaPaperPlane size={14} />
-</button>
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="mt-4 bg-[#004d2c] hover:bg-[#468e3d] text-white px-12 py-4 rounded-full font-bold transition-all shadow-lg flex items-center gap-3 w-fit disabled:opacity-70"
+              >
+                {status === "loading"
+                  ? "Submitting..."
+                  : status === "success"
+                    ? "Submitted ✓"
+                    : "Submit Now"}
+                <FaPaperPlane size={14} />
+              </button>
             </form>
           </motion.div>
 

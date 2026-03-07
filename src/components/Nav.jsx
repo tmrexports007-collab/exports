@@ -16,7 +16,9 @@ const Nav = () => {
     { name: 'Sea Food', href: '#marine' },
     { name: "Quality", href: "#quality" },
     { name: "WhyChooseUs", href: "#why-choose-us" },
-    { name: "Contact", href: "#contact" },
+     { name: "Careers", href: "#careers" },
+    // { name: "Contact", href: "#contact" },
+   
   ]
  
   // ✅ Scroll spy
@@ -62,8 +64,8 @@ const Nav = () => {
 };
  
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-[1000] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-[90px]">
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-40 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-[90px]">
  
         {/* Logo */}
         <img src={logo} alt="TMR Exports Logo" className="h-20 w-20 object-cover rounded-full" />
@@ -107,6 +109,7 @@ const Nav = () => {
             Contact <FaArrowRight size={14} />
           </a>
         </div>
+       
  
         {/* Mobile Toggle */}
         <div className="lg:hidden cursor-pointer" onClick={() => setIsOpen(true)}>
@@ -123,7 +126,7 @@ const Nav = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/30 z-[1100]"
+              className="fixed inset-0 bg-black/30 z-40"
             />
  
             <motion.div
@@ -131,7 +134,7 @@ const Nav = () => {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 left-0 h-screen w-full bg-white z-[1200] p-8 flex flex-col"
+              className="fixed top-0 left-0 h-screen w-full bg-white z-50 p-8 flex flex-col"
             >
               <div className="flex justify-between mb-10">
                 <span className="text-blue-950 font-semibold">MENU</span>

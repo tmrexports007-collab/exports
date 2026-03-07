@@ -122,11 +122,7 @@ const Marine = () => {
                   {item.desc}
                 </p>
                 <a
-                  href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                    "Hi, I would like to know about your certifications."
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#quality"
                   className="flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-[#2C5282] font-bold group-hover:gap-5 transition-all"
                 >
                   Certifications <ArrowRight className="w-3 h-3" />

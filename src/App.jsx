@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import OurMission from "./components/OurMission";
 import Quality from "./components/Quality";
 import Marine from "./components/Marine";
+import Careers from "./components/Careers";
 function AppContent() {
   return (
     <div className="font-serif bg-white">
@@ -22,7 +23,9 @@ function AppContent() {
       <Marine id="marine"/>
       <Quality id="quality" />
       <WhyChooseUs id="why-choose-us" />
+      <Careers id="careers" />
       <Contact id="contact" />
+      
       <Footer />
     </div>
   );

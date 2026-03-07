@@ -5,30 +5,42 @@ import img1 from '../assets/certificate.png'
 import img2 from '../assets/fssai.png'
 import img3 from '../assets/apeda.png'
 import img4 from '../assets/origin.png'
+import img5 from '../assets/Mpeda.png'
+import img6 from '../assets/IEC.png'
 
 const Quality = () => {
-  const certificates = [
-    {
-      name: "FSSAI",
-      subtitle: "Food Safety Standards",
-      logo: img2,
-    },
-    {
-      name: "APEDA",
-      subtitle: "Export Authority",
-      logo: img3,
-    },
-    {
-      name: "Phytosanitary",
-      subtitle: "Plant Health",
-      logo: img1
-    },
-    {
-      name: "Origin",
-      subtitle: "Authenticity",
-      logo: img4,
-    },
-  ];
+ const certificates = [
+  {
+    name: "FSSAI",
+    subtitle: "Food Safety Authority",
+    logo: img2,
+  },
+  {
+    name: "APEDA",
+    subtitle: "Agricultural Export Authority",
+    logo: img3,
+  },
+  {
+    name: "Phytosanitary",
+    subtitle: "Plant Health Certification",
+    logo: img1
+  },
+  {
+    name: "Origin",
+    subtitle: "Country of Origin Certificate",
+    logo: img4,
+  },
+  {
+    name: "MPEDA",
+    subtitle: "Marine Products Export Development Authority",
+    logo: img5,
+  },
+  {
+    name: "IEC",
+    subtitle: "Import Export Code Certification",
+    logo: img6,
+  }
+];
 
   return (
     <div id='quality' className="font-serif">
@@ -109,16 +121,22 @@ const Quality = () => {
                 We bridge the gap between Indian heritage and international safety standards. Every bag is accompanied by comprehensive documentation for seamless global entry.
               </p>
 
-              <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-6 lg:pt-12">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-white/10 pt-6 lg:pt-12">
                 {certificates.map((cert, i) => (
-                  <div key={i} className="flex flex-col items-start items-start gap-3">
+                  <div key={i} className="flex flex-col  items-start gap-3">
 
                     {/* Logo */}
-                    <img
-                      src={cert.logo}
-                      alt={cert.name}
-                      className="h-15 w-15  object-contain "
-                    />
+                  <div
+  className={`h-15 w-15 flex items-center justify-center ${
+    i === certificates.length - 1 ? "bg-white/90 rounded-full flex items-center justify-center" : ""
+  }`}
+>
+  <img
+    src={cert.logo}
+    alt={cert.name}
+    className="h-15 w-15 object-contain"
+  />
+</div>
 
                     {/* Text */}
                     <div>
